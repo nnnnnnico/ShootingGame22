@@ -104,4 +104,6 @@ bool Sprite::StaticInitialize(ID3D12Device* device, int window_width, int window
 	blenddesc.BlendOpAlpha = D3D12_BLEND_OP_ADD;
 	blenddesc.SrcBlendAlpha = D3D12_BLEND_ONE;
 	blenddesc.DestBlendAlpha = D3D12_BLEND_ZERO;
+
+	gpipeline.BlendState.RenderTarget[0] = blenddesc;
 }
