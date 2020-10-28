@@ -4,6 +4,7 @@
 #include "DirectXSet.h"
 #include <DirectXMath.h>
 #include"Object3d.h"
+#include"Sprite.h"
 
 class GameScene
 {
@@ -24,4 +25,5 @@ public:
 private:
 	DirectXSet* dx = nullptr;
 	Object3d* object3d = nullptr;
+	Sprite* spriteBG = nullptr;
 };

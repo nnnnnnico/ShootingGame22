@@ -17,9 +17,12 @@
   <ItemGroup>
     <FxCompile Include="BasicPixelShader.hlsl" />
     <FxCompile Include="BasicVertexShader.hlsl" />
+    <FxCompile Include="SpritePixelShader.hlsl" />
+    <FxCompile Include="SpriteVertexShader.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BasicShaderHeader.hlsli" />
+    <None Include="SpriteShaderHeader.hlsli" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectXSet.cpp">

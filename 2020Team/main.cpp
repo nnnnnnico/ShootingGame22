@@ -15,6 +15,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	dx = new DirectXSet();
 	dx->Initialize(winApi);
 
+	if (!Sprite::StaticInitialize(dx->GetDevice(), WinApi::window_width, WinApi::window_height)) {
+		assert(0);
+		return 1;
+	}
 	if(!Object3d::StaticInitialize(dx->GetDevice(), WinApi::window_width, WinApi::window_height)) {
 		assert(0);
 		return 1;
