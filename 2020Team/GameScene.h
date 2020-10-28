@@ -5,6 +5,7 @@
 #include <DirectXMath.h>
 #include"Object3d.h"
 #include"Sprite.h"
+#include"Input.h"
 
 class GameScene
 {
@@ -18,12 +19,13 @@ private:
 public:
 	GameScene();
 	~GameScene();
-	void Initialize(DirectXSet* dx);
+	void Initialize(DirectXSet* dx,Input* input);
 	void Update();
 	void Draw();
 
 private:
 	DirectXSet* dx = nullptr;
-	Object3d* object3d = nullptr;
+	Input* input = nullptr;
 	Sprite* spriteBG = nullptr;
+	Object3d* object3d = nullptr;
 };

@@ -185,6 +185,7 @@
   <ItemGroup>
     <ClCompile Include="DirectXSet.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object3d.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -193,6 +194,7 @@
   <ItemGroup>
     <ClInclude Include="DirectXSet.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Object3d.h" />
     <ClInclude Include="SafeDelete.h" />
     <ClInclude Include="Sprite.h" />
