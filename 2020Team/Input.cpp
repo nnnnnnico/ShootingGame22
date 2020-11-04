@@ -1,7 +1,8 @@
 #include "Input.h"
 #include <cassert>
-
+#include<stdio.h>
 #pragma comment(lib, "dinput8.lib")
+#pragma comment(lib, "dxguid.lib")
 
 bool Input::Initialize(HINSTANCE hInstance, HWND hwnd)
 {
@@ -21,8 +22,20 @@ bool Input::Initialize(HINSTANCE hInstance, HWND hwnd)
 		return result;
 	}
 
+	result = dinput->CreateDevice(GUID_SysMouse, &devMouse, NULL);
+	if (FAILED(result)) {
+		assert(0);
+		return result;
+	}
+
 	// 入力データ形式のセット
 	result = devkeyboard->SetDataFormat(&c_dfDIKeyboard); // 標準形式
+	if (FAILED(result)) {
+		assert(0);
+		return result;
+	}
+
+	result = devMouse->SetDataFormat(&c_dfDIMouse);
 	if (FAILED(result)) {
 		assert(0);
 		return result;
@@ -35,20 +48,31 @@ bool Input::Initialize(HINSTANCE hInstance, HWND hwnd)
 		return result;
 	}
 
+	result = devMouse->SetCooperativeLevel(hwnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
+	if (FAILED(result)) {
+		assert(0);
+		return result;
+	}
+
 	return true;
 }
 
-void Input::Update()
+void Input::Update(HWND hwnd)
 {
 	HRESULT result;
 
 	result = devkeyboard->Acquire();	// キーボード動作開始
+	result = devMouse->Acquire();
 
 	// 前回のキー入力を保存
 	memcpy(keyPre, key, sizeof(key));
 
 	// キーの入力
 	result = devkeyboard->GetDeviceState(sizeof(key), key);
+	result = devMouse->GetDeviceState(sizeof(Mouse), &Mouse);
+
+	GetCursorPos(&pos);
+	ScreenToClient(hwnd, &pos);
 }
 
 bool Input::PushKey(BYTE keyNumber)
@@ -76,5 +100,31 @@ bool Input::TriggerKey(BYTE keyNumber)
 	}
 
 	// トリガーでない
+	return false;
+}
+
+bool Input::LeftPush()
+{
+	if (Mouse.rgbButtons[0]) {
+		return true;
+	}
+
+	return false;
+}
+
+bool Input::RightPush()
+{
+	if (Mouse.rgbButtons[1]) {
+		return true;
+	}
+
+	return false;
+}
+
+bool Input::mouseX()
+{
+	if (pos.x = Mouse.lX) {
+		return true;
+	}
 	return false;
 }

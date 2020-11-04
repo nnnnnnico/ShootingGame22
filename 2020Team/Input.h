@@ -1,5 +1,4 @@
 #pragma once
-
 #include <Windows.h>
 #include <wrl.h>
 
@@ -25,7 +24,7 @@ public: // メンバ関数
 	/// <summary>
 	/// 毎フレーム処理
 	/// </summary>
-	void Update();
+	void Update(HWND hwnd);
 
 	/// <summary>
 	/// キーの押下をチェック
@@ -41,9 +40,19 @@ public: // メンバ関数
 	/// <returns>トリガーか</returns>
 	bool TriggerKey(BYTE keyNumber);
 
+	bool LeftPush();
+
+	bool RightPush();
+
+	bool mouseX();
+
 private: // メンバ変数
 	ComPtr<IDirectInput8> dinput;
 	ComPtr<IDirectInputDevice8> devkeyboard;
 	BYTE key[256] = {};
 	BYTE keyPre[256] = {};
+	ComPtr<IDirectInputDevice8> devMouse;
+	DIMOUSESTATE Mouse;
+
+	POINT pos;
 };

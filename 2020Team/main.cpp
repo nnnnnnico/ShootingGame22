@@ -38,7 +38,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	{
 		if (winApi->ProcessMessage()) { break; }
 
-		input->Update();
+		input->Update(winApi->GetHwnd());
 		gameScene->Update();
 
 		dx->PreDraw();
