@@ -92,7 +92,7 @@ void GameScene::Draw()
 	ID3D12GraphicsCommandList* cmdList = dx->GetCommandList();
 	//”w–Ê‚É‰æ‘œ‚ð•\Ž¦‚·‚éŠ
 	Sprite::PreDraw(cmdList);
-	spriteBG->Draw();
+	//spriteBG->Draw();
 	Sprite::PostDraw();
 	dx->ClearDepthBuffer();
 
