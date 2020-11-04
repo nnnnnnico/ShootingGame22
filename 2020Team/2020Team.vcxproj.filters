@@ -46,7 +46,11 @@
     <ClCompile Include="Input.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Model.cpp">
+=======
     <ClCompile Include="Audio.cpp">
+>>>>>>> 6009235fd0af5b9e5998c2c4b262f57ca3ad18a6
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,7 +76,11 @@
     <ClInclude Include="Input.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="Model.h">
+=======
     <ClInclude Include="Audio.h">
+>>>>>>> 6009235fd0af5b9e5998c2c4b262f57ca3ad18a6
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
