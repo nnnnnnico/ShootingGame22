@@ -63,6 +63,20 @@ void GameScene::Update()
 		object3d->SetPosition(position);
 	}
 
+	if (input->mouseX())
+	{
+		XMFLOAT3 position = object3d->GetPosition();
+		position.x += input->mouseVelX();
+		object3d->SetPosition(position);
+	}
+	
+	if (input->mouseY())
+	{
+		XMFLOAT3 position = object3d->GetPosition();
+		position.y -= input->mouseVelY();
+		object3d->SetPosition(position);
+	}
+
 	if (input->PushKey(DIK_W) || input->PushKey(DIK_S) || input->PushKey(DIK_D) || input->PushKey(DIK_A))
 	{
 		if (input->PushKey(DIK_W)) { Object3d::CameraMoveVector({ 0.0f,+1.0f,0.0f }); }

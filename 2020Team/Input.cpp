@@ -123,7 +123,16 @@ bool Input::RightPush()
 
 bool Input::mouseX()
 {
-	if (pos.x = Mouse.lX) {
+	if (Mouse.lX) {
+		
+		return true;
+	}
+	return false;
+}
+
+bool Input::mouseY()
+{
+	if (Mouse.lY) {
 		return true;
 	}
 	return false;

@@ -46,6 +46,13 @@ public: // ƒƒ“ƒoŠÖ”
 
 	bool mouseX();
 
+	bool mouseY();
+
+	const int mouseVelX() { return Mouse.lX * vel; }
+
+	const int mouseVelY() { return Mouse.lY * vel; }
+
+
 private: // ƒƒ“ƒo•Ï”
 	ComPtr<IDirectInput8> dinput;
 	ComPtr<IDirectInputDevice8> devkeyboard;
@@ -55,4 +62,5 @@ private: // ƒƒ“ƒo•Ï”
 	DIMOUSESTATE Mouse;
 
 	POINT pos;
+	float vel = 0.1f;
 };
