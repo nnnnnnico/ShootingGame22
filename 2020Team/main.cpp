@@ -1,5 +1,6 @@
 #include"WinApi.h"
 #include "DirectXSet.h"
+#include"Audio.h"
 #include "GameScene.h"
 
 
@@ -8,6 +9,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	WinApi* winApi = nullptr;
 	DirectXSet* dx = nullptr;
 	Input* input = nullptr;
+	Audio* audio = nullptr;
 	GameScene* gameScene = nullptr;
 
 
@@ -19,6 +21,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	input = new Input();
 	if (!input->Initialize(winApi->GetInstance(), winApi->GetHwnd())) {
+		assert(0);
+		return 1;
+	}
+	audio = new Audio();
+	if (!audio->Initialize()) {
 		assert(0);
 		return 1;
 	}
@@ -48,6 +55,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	
 	safe_delete(gameScene);
 	safe_delete(input);
+	safe_delete(audio);
 	safe_delete(dx);
 
 	winApi->DeleteGameWIndow();
