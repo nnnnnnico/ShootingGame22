@@ -62,5 +62,5 @@ private: // ƒƒ“ƒo•Ï”
 	DIMOUSESTATE Mouse;
 
 	POINT pos;
-	float vel = 0.1f;
+	float vel = 1;
 };
