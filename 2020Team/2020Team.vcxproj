@@ -183,6 +183,7 @@
     <None Include="SpriteShaderHeader.hlsli" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="DirectXSet.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -193,6 +194,7 @@
     <ClCompile Include="WinApi.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="DirectXSet.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Input.h" />
