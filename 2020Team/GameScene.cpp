@@ -49,10 +49,17 @@ void GameScene::Update()
 		object3d->SetPosition(position);
 	}
 
-	if (input->mouseLeft())
+	if (input->LeftPush())
 	{
 		XMFLOAT3 position = object3d->GetPosition();
 		position.x -= 0.1f;
+		object3d->SetPosition(position);
+	}
+
+	if (input->RightPush())
+	{
+		XMFLOAT3 position = object3d->GetPosition();
+		position.x += 0.1f;
 		object3d->SetPosition(position);
 	}
 
